@@ -1,0 +1,82 @@
+﻿@model FoodServices.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+    body {
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(255, 0, 0, 1), rgba(2, 0,0, 1));
+        background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+        font-family: Calibri;
+    }
+
+    section {
+        background-image: url("https://image.freepik.com/free-photo/traditional-ukrainian-russian-borscht-bowl_2829-10500.jpg");
+    }</style>
+<br />
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-200 text-left">
+        <br />
+        <br />
+        <div class="row d-flex justify-content-left align-items-left h-100">
+            <div class="col col-lg-7 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <br />
+                                <div class="form-group font-weight-bold">
+                                    <label asp-for="ItemName" class="control-label"></label>
+                                    <input asp-for="ItemName" class="form-control" />
+                                    <span asp-validation-for="ItemName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group font-weight-bold">
+                                    <label asp-for="ItemPrice" class="control-label"></label>
+                                    <input asp-for="ItemPrice" class="form-control" />
+                                    <span asp-validation-for="ItemPrice" class="text-danger"></span>
+                                </div>
+                                <div class="form-group font-weight-bold">
+                                    <label asp-for="ImageUrl" class="control-label"></label>
+                                    <input asp-for="ImageUrl" class="form-control" />
+                                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                                </div>
+                                <div class="form-group font-weight-bold">
+                                    <label asp-for="CategoryId" class="control-label"></label>
+                                    <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Add" class="btn btn-primary" />
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row pt-1">
+
+                <div class="col-15 mb-0 text-light justify-content-md-between text-center ">
+                    <br />
+                    <br /><br />
+                    <br />
+                    <br />
+                    <h1 class="font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;Dish<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Utterly awesome deliciour dish!</h4></h1>
+
+                </div>
+            </div>
+        </div>
+</section>
+<div>
+    <div class="btn btn-danger text-right"><a class="text-light font-weight-bold" asp-action="Index">Back to List</a></div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,45 @@
+﻿@model FoodServices.Models.OrderAnyItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<style>
+   /* body {
+        background-color: transparent;
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+        background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+    }*/
+    </style>
+    <br />
+    <br />
+    <br />
+  <img class="card-img-top" src="@Model.MenuItem.ImageUrl" alt="@Model.MenuItem.ItemName" height="300px" width="80pxpx">
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold text-light">Order Details</h5>
+     <h4 class="card-title font-weight-bold text-light">@Model.Customer.YourCard</h4>
+        <p class="row">
+            <div class="col card-text">
+                <h6 class="font-weight-bold text-light">@Html.DisplayNameFor(model => model.Customer.CustomerName)  </h6>
+                <p class="text-light">@Html.DisplayFor(model=> model.Customer.CustomerName)</p>
+            </div>
+            <div class="col card-text">
+                <h6 class="font-weight-bold text-light"> @Html.DisplayNameFor(model => model.FoodQuantity) </h6>
+              <p class="text-light"> @Html.DisplayFor(model => model.FoodQuantity)</p>
+            </div>
+            <div class="col card-text">
+                <h6 class="font-weight-bold text-light"> @Html.DisplayNameFor(model => model.MenuItem.ItemPrice) </h6>
+               <p class="text-light">@Html.DisplayFor(model => model.MenuItem.ItemPrice)</p>
+            </div>
+         
+</div>
+
+            </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrderAnyItemId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

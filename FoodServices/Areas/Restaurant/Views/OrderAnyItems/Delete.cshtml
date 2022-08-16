@@ -1,0 +1,71 @@
+﻿@model FoodServices.Models.OrderAnyItem
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+  /* body, form {
+        background-color: transparent;
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+        background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+        font-family:Calibri;
+    }*/
+    
+    section {
+        background-image: url("https://images.unsplash.com/photo-1626777552795-3a5e3f6ee7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80");
+        background-size: inherit;
+        height:500px;
+        width:1100px;
+    }
+</style>
+
+<br />
+<br />
+
+<section class="vh-210" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-210">
+        <div class="row d-flex justify-content-center align-items-center h-100"><br />
+            <div class="col col-lg-6 mb-4 mb-lg-0 text-center"><br />
+                <div class="card mb-3" style="border-radius: .5rem;">
+     
+                    <br />
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>OrderAnyItem</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.FoodQuantity)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.FoodQuantity)
+        </dd>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.MenuItem.ItemName)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.MenuItem.ItemName)
+        </dd class>
+        <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Customer)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Customer.CustomerCard)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="OrderAnyItemId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+</div>
+            </div>
+        </div>
+    </div>
+
+</section>
+

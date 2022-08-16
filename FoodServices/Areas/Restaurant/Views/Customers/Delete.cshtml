@@ -1,0 +1,93 @@
+﻿@model FoodServices.Models.Customer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    body {
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(255, 0, 0, 1), rgba(2, 0,0, 1));
+        background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+    }
+
+    section {
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(255, 0, 0, 1), rgba(2, 0,0, 1));
+        background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+    }
+</style>
+
+
+<section class="vh-210" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-210">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-7 mb-4 mb-lg-0 text-center">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <br />
+                    <h3>Are you sure you want to delete this?</h3>
+                    <div>
+                        <h4>Customer</h4>
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.CustomerName)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.CustomerName)
+                            </dd>
+                            <dt class="col-sm-6 ">
+                                @Html.DisplayNameFor(model => model.YourCard)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.YourCard)
+                            </dd>
+                            <dt class="col-sm-6 ">
+                                @Html.DisplayNameFor(model => model.Address)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.Address)
+                            </dd>
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.CustomerPhone)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.CustomerPhone)
+                            </dd>
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.AddressCity)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.AddressCity)
+                            </dd>
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.Email)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.ImageUrl)
+                            </dt>
+                            <dd class="col-sm-4">
+                                <img src="@Model.ImageUrl" height="100px" />
+                            </dd>
+                            <dt class="col-sm-6">
+                                @Html.DisplayNameFor(model => model.CustomerCard)
+                            </dt>
+                            <dd class="col-sm-4">
+                                @Html.DisplayFor(model => model.CustomerCard)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="Delete">
+                            <input type="submit" value="Delete" class="btn btn-danger" /> |
+                            <h5 class="btn btn-group-toggle text-danger"> <a class="text-danger" asp-action="Index">Back to List</a></h5>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

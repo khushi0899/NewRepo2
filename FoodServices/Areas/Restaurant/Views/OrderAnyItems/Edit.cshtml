@@ -1,0 +1,79 @@
+﻿@model FoodServices.Models.OrderAnyItem
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+   /* body, form {
+        background-color: transparent;
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+        background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+       
+    }
+*/
+    section {
+         background-image: url("https://images.unsplash.com/photo-1626777552795-3a5e3f6ee7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80");
+        background-size: inherit;
+    }
+
+</style>
+
+
+<hr />
+<br />
+<br />
+<br />
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-200 text-left">
+        <br />
+        <div class="row d-flex justify-content-left align-items-left h-100">
+            <div class="col col-lg-7 mb-4 mb-lg-0">
+                <br />
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 justify-content-center"><br />
+                                    <form asp-action="Edit"><br />
+                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        <input type="hidden" asp-for="OrderAnyItemId" />
+                                        <div class="form-group">
+                                            <label asp-for="FoodQuantity" class="control-label"></label>
+                                            <input asp-for="FoodQuantity" class="form-control" />
+                                            <span asp-validation-for="FoodQuantity" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="MenuItem.ItemName" class="control-label"></label>
+                                            <select asp-for="MenuItem.ItemName" class="form-control" asp-items="ViewBag.ItemName"></select>
+                                            <span asp-validation-for="MenuId" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label asp-for="Customer.CustomerCard" class="control-label"></label>
+                                            <select asp-for="Customer.CustomerCard" class="form-control" asp-items="ViewBag.CustomerCard"></select>
+                                            <span asp-validation-for="Customer.CustomerCard" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" value="Save" class="btn btn-danger" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+             </div>
+       </div>
+
+</div>
+
+</section>
+<div>
+    <div class="btn btn-danger text-right"><a class="text-light font-weight-bold" asp-action="Index">Back to List</a></div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

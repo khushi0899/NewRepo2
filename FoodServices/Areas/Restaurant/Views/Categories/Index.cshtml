@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FoodServices.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<style>
+    body, section {
+      font-family:Calibri;
+
+    th {
+        text-align: center;
+        color: black;
+    }
+
+    td {
+        text-align: center;
+        color: black;
+    }
+
+    section {
+        
+        height: 570px;
+        width: 1100px;
+        background-image: url("https://images.unsplash.com/photo-1626777552795-3a5e3f6ee7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80");
+        background-size: inherit;
+    }
+
+   
+</style>
+
+<section class="vh-200 align-right" style="background-color: #f4f5f7;">
+    <div class="container py-20 h-500">
+        <br />
+        <h3 class="text-white text-center text-white">Order List</h3><br />
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-10 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryName)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CategoryName)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <div class="btn btn-outline-info font-weight-bold text-right"><a class="text-light" asp-action="Create"><h6 class="text-right">Create Category</h6></a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

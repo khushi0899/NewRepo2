@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FoodServices</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <style>
+    body {
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(255, 0, 0, 1), rgba(2, 0,0, 1));
+       background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+    }
+
+     .nav{
+        background: #070000;
+         background: -webkit-linear-gradient(to right bottom, rgba(2, 0, 0, 1), rgba(255, 0,0, 1));
+       background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-toggleable-sm nav bg-danger der-bottom box-shadow mb-3  sticky-top fixed-top  " style="position: fixed ;height:15vh">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index"><h6 class="font-weight-bold text-light" style="font-family:Calibri;padding:0 40px 0 40px">&nbsp;JASH <br />RESTAURANT</h6></a>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item" style="padding:0 20px 0 20px">
+                            <a class="nav-link text-light align-text-center" asp-area="" asp-page="/Index">Home</a>
+                        </li>
+                         <li class="nav-item" style="padding:0 20px 0 20px">
+                            <a class="nav-link text-light align-text-center" asp-area="Restaurant" asp-controller="MenuItems" asp-action="IndexForUser">Menu</a>
+                        </li>
+
+                         <li class="nav-item" style="padding:0 20px 0 20px">
+                            <a class="nav-link text-light align-text-center"  asp-area="Restaurant" asp-controller="OrderAnyItems" asp-action="Create">Order</a>
+                        </li>
+                         <li class="nav-item" style="padding:0 20px 0 20px">
+                            <a class="nav-link text-light align-text-center"  asp-area="Restaurant" asp-controller="Customers" asp-action="Index">Your Profile</a>
+                        </li>
+                         <li class="nav-item" style="padding:0 20px 0 20px">
+                            <a class="nav-link text-light align-text-center"  asp-area="Restaurant" asp-controller="Customers" asp-action="Create">Sign Up</a>
+                        </li>
+           
+                         <li class="nav-item dropdown" style="padding: 0 30px 0 30px">
+                                <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#">Manage</a>
+                                <div class="dropdown-menu">
+                                <a class="dropdown-item" 
+                                   asp-area="Restaurant" asp-controller="Categories" asp-action="Index">Categories</a>
+                                <a class="dropdown-item"
+                                   asp-area="Restaurant" asp-controller="MenuItems" asp-action="Index">Menu</a>
+                                   <a class="dropdown-item" 
+                                   asp-area="Restaurant" asp-controller="OrderAnyItems" asp-action="Index">Order</a>
+                                <a class="dropdown-item"
+                                   asp-area="Restaurant" asp-controller="Customers" asp-action="Index">Customer</a>
+                                    
+
+
+
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - FoodServices - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

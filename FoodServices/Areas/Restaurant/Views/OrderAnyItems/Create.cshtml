@@ -1,0 +1,86 @@
+﻿@model FoodServices.Models.OrderAnyItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<style>
+
+    section{
+        background-color: transparent;
+        background: #f6d365;
+        height: 1000px;
+        width: 1100px;
+        background-image: url("https://images.unsplash.com/photo-1626777552795-3a5e3f6ee7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80");
+        background-size: inherit;
+    }
+</style>
+
+<br />
+<br />
+<br /><br />
+<section class="" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-200 text-left">
+        <br />
+        <br />
+        <br />
+        <br />
+</div>
+    <div class="row d-flex justify-content-left align-items-left h-100"><br />
+            <div class="col col-lg-7 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div><br />
+                                <div class="form-group">
+                                    <label asp-for="FoodQuantity" class="control-label"></label>
+                                    <input asp-for="FoodQuantity" class="form-control" />
+                                    <span asp-validation-for="FoodQuantity" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MenuId" class="control-label"></label>
+                                    <select asp-for="MenuId" class="form-control" asp-items="ViewBag.MenuId"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CustomerId" class="control-label"></label>
+                                    <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                                </div>
+                                <div class="form-group">
+                                <input type="submit" value="Create" class="btn btn-danger" />
+                                <h5> If you are not finding yourself in Card.Please Register yourself first</h5>
+                                <div class="btn btn-outline-danger font-weight-bold text-right"><a class="text-light" asp-action="Create"><h6 class="text-right">Register Now</h6></a></div>
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row pt-1">
+
+                <div class="col-15 mb-0 text-light justify-content-md-between text-center ">
+                    <br />
+                    <br /><br />
+                    <br />
+                    <br />
+                    <h1 class="font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;Order<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enjoy your Day with Declicious Food!</h4></h1>
+
+                </div>
+            </div>
+        </div>
+</section>
+<div>
+    <div class="btn btn-danger text-right"><a class="text-light font-weight-bold" asp-action="Index">Back to List</a></div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

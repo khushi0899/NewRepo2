@@ -1,0 +1,67 @@
+﻿@model FoodServices.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<style>
+
+    section {
+        height: 400px;
+        width: 1100px;
+        background-image: url("https://images.unsplash.com/photo-1626777552795-3a5e3f6ee7ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=885&q=80");
+        background-size: inherit;
+    }
+    content{
+        position:absolute;
+        top:50%;
+        left:80%;
+        transform:translate(-50%, -50%);
+    }
+    body{
+        font-family:Calibri;
+    }
+</style>
+
+<br />
+<section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="container py-5 h-200 text-left">
+        <br /><br />
+        <br />
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-5 mb-4 mb-lg-0">
+             
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <div class="row justify-content-center">
+                        <div class="col-15-md-8">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="CategoryName" class="control-label"></label>
+                                    <input asp-for="CategoryName" class="form-control" />
+                                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Add Category" class="btn btn-danger" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                     
+            </div>
+               <div class="content font-weight-bold text-white">
+                 <h1>Food Category</h1>
+                 <h3>&nbsp;&nbsp; Let at Something new!</h3>
+                 </div>
+                </div>
+        </div>
+</section>
+<div>
+    <div class="btn btn-danger text-right"><a class="text-light font-weight-bold" asp-action="Index">Back to List</a></div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

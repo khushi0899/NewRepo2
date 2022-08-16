@@ -1,0 +1,149 @@
+﻿@model FoodServices.Models.Customer
+
+@{
+    ViewData["Title"] = "Your Profile";
+}
+
+<style>
+    body {
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(255, 0, 0, 1), rgba(2, 0,0, 1));
+        background: linear-gradient(to right bottom, rgba(2,0,0,1),rgba(178, 34, 34, 1));
+    }
+
+    gradient-custom {
+        background-image: url("")
+    }
+
+    .home {
+        font-family: Calibri;
+    }
+
+        .home span {
+            color: rgba(178,34, 30, 1);
+        }
+
+    section {
+        font-family: Calibri;
+    }
+
+    .home h3 {
+        color: white;
+    }
+
+    .gradient-custom {
+        background-image: url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80");
+    }
+
+</style>
+
+
+<body>
+    <center>
+        <div class="home">
+            @* <h3> Hello ...!</h3><h1><span>@Model.CustomerName</span></H1>
+            <h6>All Details Are Available</h6>*@
+        </div>
+    </center>
+    <br />
+    <br />
+    <section class="vh-150 h-150" style="background:inherit">
+        <div class="container py-5">
+            <div class="row d-flex justify-content-left align-items-left h-100">
+                <div class="col col-lg-11 mb-7 mb-lg-0">
+                    <div class="card mb-6 " style="border-radius: .5rem;">
+                        <div class="row g-0">
+                            <div class="col-md-4 gradient-custom text-center text-white"
+                                 style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+
+                                <i class="far fa-edit mb-5"></i>
+                            </div>
+
+
+                            <div class="col-md-8">
+                                <div class="card-body p-4">
+                                    <h4 class="font-weight-bolder">Customer Information</h4>
+                                    <hr class="mt-0 mb-0">
+                                    <div class="row pt-1">
+                                        <div class="col-5">
+                                            <img src="@Model.ImageUrl"
+                                                 alt="Avatar" class="img-fluid my-5" style="width: 100px;" />
+                                        </div>
+                                        <div class="col-5 mb-3">
+                                            <br />
+                                            <br />
+
+                                            <h5 class="font-weight-bold">Name</h5>
+                                            <p>@Model.CustomerName</p>
+                                            <h5 class="font-weight-bold">Your Card Number</h5>
+                                            <p>@Html.DisplayFor(model => model.YourCard)</p>
+
+                                        </div>
+
+                                        <div class="col-5 mb-3">
+                                            <h5 class="font-weight-bold">Phone</h5>
+                                            <p>@Html.DisplayFor(model => model.CustomerPhone)</p>
+
+                                            <h5 class="font-weight-bold">@Html.DisplayNameFor(model => model.Email)</h5>
+                                            <p>@Html.DisplayFor(model => model.Email)</p>
+                                        </div>
+                                        <div class="col-5 mb-3">
+                                            <h5 class="font-weight-bold"> @Html.DisplayNameFor(model => model.AddressCity)</h5>
+                                            <p>@Html.DisplayFor(model => model.AddressCity)</p>
+
+                                            <h5 class="font-weight-bold">@Html.DisplayNameFor(model => model.Address)</h5>
+                                            <p>@Html.DisplayFor(model => model.Address)</p>
+
+                                        </div>
+
+                                          </div>
+                                    <h5 class="font-weight-bold">Your Order Details</h5>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h5 class="font-weight-bold">Dish</h5>
+                                            <p>@Html.DisplayFor(model => model.OrderAnyItem)</p>
+                                        </div>
+                
+                                    </div>
+
+                                    </div>
+                                    <h5 class="font-weight-bold">JASH Restaurant</h5>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-6 mb-3">
+                                            <h5 class="font-weight-bold">Phone</h5>
+                                            <p class="text-muted">7823095410</p>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <h5 class="font-weight-bold">Email</h5>
+                                            <p class="text-muted">jashrestro120@gmail.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                        <div class="d-flex justify-content-start">
+                                            <i class="fab fa-facebook-f"></i>
+                                            @* <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                            <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                                            <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>*@
+                                        </div>
+
+
+                                        <div>
+                                            <h5 class="btn btn-group-toggle btn text-danger"> <a class="text-danger" asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a></h5>|
+                                            <h5 class="btn btn-group-toggle btn text-danger"><a class="text-danger" asp-action="Delete" asp-route-id="@Model.CustomerId">Delete Profile</a></h5>
+                                            <h5 class="btn btn-group-toggle btn btn-danger text-danger"> <a class="text-light" asp-action="Index">Back to List</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+

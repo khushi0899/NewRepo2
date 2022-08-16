@@ -1,0 +1,41 @@
+﻿@model FoodServices.Models.MenuItem
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+   /* body {
+        background-color: transparent;
+        background: #f6d365;
+        background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+        background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+    }*/
+</style>
+
+<h3>Dish Details</h3>
+<div class="card justify-content-center text-center" style="width:18rem">
+    <div class="card-title text-center">
+        <h2>@Html.DisplayFor(model => model.Category.CategoryName)</h2>
+    </div>
+    <img class="card-img-top" src="@Model.ImageUrl" alt="@Model.ItemName"
+         style="max-height: 300px;">
+    <div class="card-body">
+        <h4 class="card-title">@Model.Category.CategoryName Famous Dish</h4>
+        <p class="row">
+            <div class="col card-text">
+                <h6 class="font-weight-bold">@Html.DisplayNameFor(model => model.ItemName)  </h6>
+                @Html.DisplayFor(model=> model.ItemName)
+            </div>
+            <div class="col card-text">
+                <h6 class="font-weight-bold"> @Html.DisplayNameFor(model => model.ItemPrice) </h6>
+                @Html.DisplayFor(model => model.ItemPrice)
+
+            </div>
+    </div>
+</div>
+<div class="card-footer text-center">
+    <a asp-action="Edit" asp-route-id="@Model.ItemId" class="btn btn-primary">Edit</a>
+    &nbsp;|&nbsp;
+    <a asp-action="Index">Back to List</a>
+</div>

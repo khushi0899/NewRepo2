@@ -1,0 +1,92 @@
+﻿@model IEnumerable<FoodServices.Models.MenuItem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    /*  body {
+           background-color:transparent;
+             background: #f6d365;
+            background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+            background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+        }
+    */
+    th {
+        text-align: center;
+        color: black;
+    }
+
+    td {
+        text-align: center;
+        color: black;
+    }
+
+    section {
+        height: 800px;
+        width: 1100px;
+        background-image: url("https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/04/beef-broccoli-chinese-food-1296x728-header.jpg?w=1575");
+        background-size: inherit;
+    }
+    /*table{
+            background-color:transparent;
+             background: #f6d365;
+            background: -webkit-linear-gradient(to right bottom, rgba(13, 152, 186,1), rgba(13, 152,180, 1));
+            background: linear-gradient(to right bottom, rgba(255,255,255,1),rgba(22, 152, 190, 1));
+        }*/
+</style>
+<br />
+<br />
+<br />
+<section class="vh-200 align-right" style="background-color: #f4f5f7;">
+    <div class="container py-20 h-500">
+        <br />
+
+        <h3 class="text-white text-left text-white">Menu Dish</h3><br />
+        <div class="row d-flex justify-content-right align-items-right h-100">
+            <div class="col col-lg-7 mb-4 mb-lg-0">
+                <div class="card mb-3" style="border-radius: .5rem;">
+                    <table class="table border-dark">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ItemName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ItemPrice)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Category)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ItemName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ItemPrice)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                                    </td>
+                                    <td>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-right">
+                    <div class="btn btn-outline-info font-weight-bold text-right"><a class="text-light" asp-action="Create"><h6 class="text-right">New Dish Add</h6></a></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
